@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css.css">
+    <link rel="icon" type="image/png" href="c:\Users\wowow\Desktop\projet hakeka\New folder\einstein.png">
+	<title>projet physique</title>
+</head>
+<body>
+<div id="content">   
+<article>
+ <h1><center><u><font color="dodgerblue"> l'inpact des déchets plastiques sur l'environnement</font></u></center></h1>
+ <br>
+ <br>
+ <h3>Les déchets plastiques ont un impact significatif et néfaste sur l'environnement à plusieurs niveaux :</h3>
+ <h2>1; La pollution marine : </h2>
+
+<p>Les déchets plastiques sont une source majeure de pollution des océans. Ils sont souvent mal gérés et finissent par se retrouver dans les cours d'eau, les rivières et les océans, où ils peuvent nuire à la vie marine. Les animaux marins peuvent les ingérer par erreur, ce qui peut entraîner des blessures, la mort et perturber les écosystèmes marins.</p>
+</article>
+
+</div>
+<br><br>
+<center><button id="startButton">Commencer la lecture</button>
+<button id="stopButton">Arrêter la lecture</button>
+<button id="resumeButton">Reprendre la lecture</button></center> <!-- New button -->
+<script>
+    var synth = window.speechSynthesis;
+    
+    var divElement = document.getElementById('content');
+    
+    var utterance = new SpeechSynthesisUtterance(divElement.textContent);
+    
+    utterance.lang = 'fr-FR';
+    
+    var startButton = document.getElementById('startButton');
+    var stopButton = document.getElementById('stopButton');
+    var resumeButton = document.getElementById('resumeButton');
+    
+    startButton.addEventListener('click', function() {
+        synth.cancel();
+        synth.speak(utterance); 
+    });
+    
+
+    stopButton.addEventListener('click', function() {  
+        synth.pause();
+    });
+   
+    resumeButton.addEventListener('click', function() {
+        synth.resume();
+    });
+</script>
+
+</body>
+</html>
